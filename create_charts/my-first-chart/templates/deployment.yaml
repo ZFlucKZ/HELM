@@ -1,6 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
-  {{"Hi there! we are learning - "}}, {{"HELM"}}
+  {{- .Values.customblock.author.name}}
+  {{- .Values.customblock.author.addess}}
+
+  {{- "Values from Chart"}}
+  {{- .Chart.apiVersion}}
+  {{- .Chart.keywords}}
+
 metadata:
   name: {{ include "my-first-chart.fullname" . }}
   labels:
