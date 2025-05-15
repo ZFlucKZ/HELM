@@ -1,0 +1,82 @@
+ helm ls -A
+  159  pwd
+  160  git 
+  161  clear
+  162  git clone https://cloud.digitalocean.com/droplets/495798961/terminal/ui/
+  163  git clone https://github.com/ZFlucKZ/HELM.git
+  164  lds
+  165  ls
+  166  pwd
+  167  ls
+  168  cd HELM/
+  169  clear
+  170  ls
+  171  mkdir create_charts
+  172  cd create_charts/
+  173  clear
+  174  pwd
+  175  helm create my_first_chart
+  176  ls
+  177  cd my_first_chart/
+  178  ls
+  179  cat Chart.yaml 
+  180  clear
+  181  cd charts/
+  182  ls
+  183  clear
+  184  cd ../templates/
+  185  ls
+  186  cd tests/
+  187  ll
+  188  cd ..
+  189  ls
+  190  cd. .
+  191  cd ..
+  192  ll
+  193  git add .
+  194  git commit -m "First HELM Chart"
+  195  git config --global user.email "pajjaphon1@gmail.com"
+  196  git config --global user.name "Fluke"
+  197  git commit -m "First HELM Chart"
+  198  git push
+  199  ls
+  200  cd create_charts/
+  201  ls
+  202  helm ls -A
+  203  clear
+  204  helm install custom-deployment  my_first_chart/
+  205  helm create my-first-chart
+  206  ls
+  207  rm -rf my_first_chart/
+  208  git add .
+  209  git commit -m "change helm chat name"
+  210  git push
+  211  helm install custom-deployment  my-first-chart/
+  212  helm list -la
+  213  helm list -A
+  214  helm unistall custom-deployment
+  215  helm uninstall custom-deployment
+  216  helm install custom-deployment  my-first-char
+  217  helm install custom-deployment  my-first-chart/
+  218  helm ls -A
+  219  helm list -A
+  220  helm uninstall my-mysql
+  221  helm uninstall my-mariadb
+  222  helm uninstall mariadb -n database
+  223  helm ls -a
+  224  helm ls -A
+  225  clear
+  226  kubectl get all
+  227  ls
+  228  cd HELM/
+  229  ls
+  230  ls -a
+  231  git pull
+  232  cd create_charts/
+  233  ls
+  234  helm package my-first-chart/
+  235  ls
+  236  helm package my-first-chart/ -d /root/
+  237  helm lint my-first-chart
+  238  ls my-first-chart
+  239  vi my-first-chart/Chart.yaml
