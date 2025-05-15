@@ -2,9 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
   {{- .Values.customblock.author.name}}
   {{- .Values.customblock.author.addess}}
+  {{- .Values.customblock.author.addesss | default "Hi, I am not Null"}}
+  {{- .Values.customblock.author.addess | default "Hi, I am not Null" | upper }}
 
-  {{- "Values from Chart"}}
   {{- .Chart.Keywords}}
+
+  {{}}
 
 metadata:
   name: {{ include "my-first-chart.fullname" . }}
