@@ -1,0 +1,6 @@
+auth:
+  database: 'helm_training'
+  password: 'test1234'
+  username: 'custom_user'
+  rootPassword: 'root1234'
+# helm install -n database --values mariadb_custom_values.yaml mariadb bitnami/mariadb --version 12.0.0
