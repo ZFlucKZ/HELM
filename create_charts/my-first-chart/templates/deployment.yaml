@@ -7,8 +7,6 @@ kind: Deployment
 
   {{- .Chart.Keywords}}
 
-  {{}}
-
 metadata:
   name: {{ include "my-first-chart.fullname" . }}
   labels:
