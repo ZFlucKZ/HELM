@@ -8,15 +8,38 @@ kind: Deployment
 
   # {{ .Chart.Keywords}}
 
-  {{- if not .Values.customblock.author.name}}
-  {{"Custom Value is present" | nindent 4}}
-  {{- end}}
+  # {{- if not .Values.customblock.author.name}}
+  # {{"Custom Value is present" | nindent 4}}
+  # {{- end}}
 
-   {{- if .Values.customblock.author.name}}
-  {{"Custom Value is present" | nindent 4}}
-  {{- else}}
-  {{"Custom Value is not present" | nindent 4}}
-  {{- end}}
+  #  {{- if .Values.customblock.author.name}}
+  # {{"Custom Value is present" | nindent 4}}
+  # {{- else}}
+  # {{"Custom Value is not present" | nindent 4}}
+  # {{- end}}
+
+  # {{ - with .Values.customblock.author.name }}
+  # {{ - toYaml . | nindent 4 }}
+  # {{ -else }}
+  # {{ "I am without with block" | nindent 4 }}
+  # {{ - end }}
+
+  # {{ $myVar := "Hello World" }}
+  # {{- if eq $myVar "Hello World" }}
+  # {{- $myVar | nindent 4 }}
+  # {{- else }}
+  # {{- $myVar | upper | nindent 4 }}
+  # {{- end }}
+
+  {{ range $key, $value := .Values.customblock.author.name }}
+  {{ $key }}: {{ $value | quote }}
+  {{ end }}
+
+author:
+  {{- range $key, $value := .Values.customblock.author.name }}
+  {{ $key }}: {{ $value | quote }}
+  {{- end }}
+  
 
 metadata:
   name: {{ include "my-first-chart.fullname" . }}
