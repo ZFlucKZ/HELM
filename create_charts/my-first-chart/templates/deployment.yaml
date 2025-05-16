@@ -1,12 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
-  {{ .Values.customblock.author.name}}
-  {{ .Values.customblock.author.addess}}
-  {{ .Values.customblock.author.addesss | default "Hi, I am not Null"}}
-  {{ .Values.customblock.author.addess | default "Hi, I am not Null" | upper }}
-  {{ .Values.customblock.author.addess | default "Hi, I am not Null" | upper | quote }}
+  # {{ .Values.customblock.author.name}}
+  # {{ .Values.customblock.author.addess | nindent 4}}
+  # {{ .Values.customblock.author.addesss | default "Hi, I am not Null" | nindent 6}}
+  # {{ .Values.customblock.author.addess | default "Hi, I am not Null" | upper | nindent 8 }}
+  # {{ .Values.customblock.author.addess | default "Hi, I am not Null" | upper | quote | nindent 10 }}
 
-  {{ .Chart.Keywords}}
+  # {{ .Chart.Keywords}}
+
+  {{- if not .Values.customblock.author.name}}
+  {{"Custom Value is present" | nindent 4}}
+  {{- end}}
+
+   {{- if .Values.customblock.author.name}}
+  {{"Custom Value is present" | nindent 4}}
+  {{- else}}
+  {{"Custom Value is not present" | nindent 4}}
+  {{- end}}
 
 metadata:
   name: {{ include "my-first-chart.fullname" . }}
